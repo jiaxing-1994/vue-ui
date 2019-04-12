@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const entrys = require('./files');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -7,12 +8,10 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 module.exports = {
     // mode:'production',
-    entry:{
-        index:'./src/index.js'
-    },
+    entry:entrys,
     output:{
         // publicPath:'/js',
-        path:path.resolve(__dirname,'../demo'),
+        path:path.resolve(__dirname,'../dist'),
         filename:'[name].js',
         libraryExport: 'default',
         library: 'VUEUI',
@@ -73,7 +72,7 @@ module.exports = {
     plugins:[
         new ProgressBarPlugin(),
         new ExtractTextPlugin({
-            filename:'[name].css'
+            filename:'./style/[name].css'
         })
     ]
 };
