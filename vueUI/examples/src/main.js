@@ -3,10 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import vueUI from '../../src/index'
-
+// import vueUI from '../../src/index'
+import VueUI from '../../demo/index.js'
+import '../../demo/index.css'
 Vue.config.productionTip = false
-Vue.use(vueUI);
+Vue.use(VueUI);
 
 /* eslint-disable no-new */
 new Vue({
