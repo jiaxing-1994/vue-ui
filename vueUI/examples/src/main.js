@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import vueUI from '../../src/index'
+import VueUI from '../../src/index'
 Vue.config.productionTip = false
 Vue.use(VueUI);
 
