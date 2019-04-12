@@ -3,9 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import vueUI from '../../src/index'
-import VueUI from '../../demo/index.js'
-import '../../demo/index.css'
+import vueUI from '../../src/index'
 Vue.config.productionTip = false
 Vue.use(VueUI);
 
