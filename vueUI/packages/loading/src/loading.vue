@@ -32,7 +32,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .loading{
     background: rgba(0,0,0,.8);
     position: absolute;

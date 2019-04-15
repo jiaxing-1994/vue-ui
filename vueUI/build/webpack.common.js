@@ -72,6 +72,7 @@ module.exports = {
     },
     plugins:[
         new ProgressBarPlugin(),
+        new VueLoaderPlugin(),
         new ExtractTextPlugin({
             filename:'./style/[name].css'
         })

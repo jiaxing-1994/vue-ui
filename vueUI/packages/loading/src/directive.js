@@ -9,7 +9,6 @@ loadingDirective.install = Vue => {
     Vue.directive('loading',{
         //初次绑定指令的时候调用
         bind:function(el,binding,vnode){
-            console.log(vnode);
             const vm = vnode.context; //绑定节点的vm
             const loading = new Mask({
                 el:document.createElement('div'),
@@ -41,7 +40,6 @@ loadingDirective.install = Vue => {
         if(binding.value){
             //开启加载
             Vue.nextTick(()=>{
-                console.log(el.instance);
                 if(el.isInsert){
                     //以及插入dom
                     el.instance.visible = true;

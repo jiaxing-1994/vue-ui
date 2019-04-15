@@ -47,6 +47,8 @@ export function getStyle(element,styleName){
         return element.style[styleName];
     }
 }
+
+//设置样式
 export function setStyle(element,styleName,styleValue){
     if(isServer) return;
     if(!element||!styleName) return null;
@@ -61,4 +63,24 @@ export function setStyle(element,styleName,styleValue){
         element.style[styleName] = styleValue;
         return element;
     }
+}
+//垂直居中对象
+export function middlePosition(parent,el){
+    var parentHeight = parent.clientHeight;
+    var parentWidth = parent.clientWidth;
+    var height = el.clientHeight;
+    var width = el.clientWidth;
+    parent.style.position = 'relative';
+    el.style.top = parentHeight/2-height/2 + 'px';
+    el.style.left = parentWidth/2-width/2 + 'px';
+}
+
+//判断是否是dom节点
+export function isDom(obj){
+    var isDom = (typeof HTMLElement === 'object')?function(obj){
+        return obj instanceof HTMLElement;
+    }:function(obj){
+        return obj&&typeof obj === 'object'&&obj.nodeType===1&&typeof obj.nodeName === 'string';
+    }
+    return isDom(obj);
 }
