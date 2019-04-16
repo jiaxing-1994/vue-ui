@@ -16,10 +16,10 @@ export default {
         return{
         list:[{
             text:'弹窗',
-            path:''
+            path:'/layer'
         },{
             text:'loading',
-            path:''
+            path:'/loading'
         },{
             text:'toast',
             path:''

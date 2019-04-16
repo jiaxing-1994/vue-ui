@@ -14,7 +14,7 @@
                         repeatCount="indefinite" />
                 </path>
             </svg>
-            <p v-if="text">{{text}}</p>
+            <p class="vi-loading-text" v-if="text">{{text}}</p>
         </div>
     </transition>
 </template>
@@ -32,7 +32,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .loading{
     background: rgba(0,0,0,.8);
     position: absolute;
@@ -48,6 +48,9 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    .vi-loading-text{
+        margin: 0;
+    }
 }
 .loading.fullscreen{
     position: fixed;

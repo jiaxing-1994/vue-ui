@@ -9,12 +9,14 @@ loadingDirective.install = Vue => {
     Vue.directive('loading',{
         //初次绑定指令的时候调用
         bind:function(el,binding,vnode){
+            console.log(el);
+            const text = el.getAttribute('vi-loading-text');
             const vm = vnode.context; //绑定节点的vm
             const loading = new Mask({
                 el:document.createElement('div'),
                 data:{
                     fullscreen:binding.modifiers.fullscreen?true:false,
-                    // customClass: vm
+                    text: text
                 }
             });
             el.instance = loading; //储存loading实例
@@ -26,6 +28,7 @@ loadingDirective.install = Vue => {
         },
         update:function(el,binding){
             //指令值更新时候调用
+            console.log(binding);
             toggleLoading(el,binding);
         },
         unbind:function(el,binding){
@@ -40,7 +43,7 @@ loadingDirective.install = Vue => {
         if(binding.value){
             //开启加载
             Vue.nextTick(()=>{
-                if(el.isInsert){
+                if(el.domInserted){
                     //以及插入dom
                     el.instance.visible = true;
                 }else{
