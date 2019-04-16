@@ -1,5 +1,11 @@
 <template>
   <div class="hello" v-loading.fullscreen="isLoad">
+    <vi-header 
+      :text="headText">
+      <div class="header-text">
+        <input type="text" placeholder="输入关键字"/>
+      </div>
+    </vi-header>
     <h1>{{ msg }}</h1>
     <h2 id="vi-layer" class="vi-layer-content">Essential Links</h2>
     <button @click="openLayer">弹窗</button>
@@ -13,7 +19,7 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       isLoad:false,
-      classes:'123 321'
+      headText:''
     }
   },
   mounted(){
@@ -68,5 +74,11 @@ a {
 }
 .vi-layer-content{
   display: none;
+}
+.header-text{
+  color:red;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px 0 10px 0;
 }
 </style>

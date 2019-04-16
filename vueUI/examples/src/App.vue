@@ -1,13 +1,12 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
 }
 </script>
 
@@ -15,6 +14,21 @@ export default {
 html,body{
   height: 100%;
   width: 100%;
+  margin: 0;
+}
+input{
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  padding-left: 10px;
+}
+input:focus{
+  outline: none;
+}
+ul,li{
+  list-style:none;
+  padding:0;
+  margin:0;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -22,6 +36,5 @@ html,body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

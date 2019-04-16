@@ -1,11 +1,11 @@
 <template>
     <div class="vi-layer">
         <div :class="['vi-layer-box',animationClass]" :style="{'width':width,'z-index':uId+2}">
-            <div v-if="heightText" class="vi-layer-header" :style="{'height':height[0]}">
-                {{heightText}}
+            <div v-if="headerText" class="vi-layer-header" :style="{'height':height[0]}">
+                {{headerText}}
             </div>
-            <div v-if="!isDom" v-html="content" class="vi-layer-content" :style="{'height':height[1]?height[1]:'80px'}"></div>
-            <div v-if="isDom" :id="'vi-layer-'+uId" class="vi-layer-content" :style="{'height':height[1]?height[1]:'80px'}"></div>
+            <div v-if="!isDom" v-html="contentText" class="vi-layer-content" :style="{'min-height':height[1]?height[1]:'80px'}"></div>
+            <div v-if="isDom" :id="'vi-layer-'+uId" class="vi-layer-content" :style="{'min-height':height[1]?height[1]:'80px'}"></div>
             <div v-if="btn.length>0" class="vi-layer-btn" :style="{'height':height[2]?height[2]:'40px'}">
                 <span v-for="(item,index) in btn" :key="index" @click="clickBtn(item.method)">{{item.text}}</span>
             </div>
@@ -22,9 +22,9 @@ export default {
             isShowBg:true,
             height:['40px','160px','40px'],
             width:'80%',
-            heightText:'系统提示',
+            headerText:'系统提示',
             isDom:false,
-            content:'',
+            contentText:'',
             btn:[{
                 text:'取消',
                 method:'关闭'
@@ -39,11 +39,11 @@ export default {
         }
     },
     mounted(){
-        this.content = this.getContent(this.content);
-        this.isDom = this.isElement(this.content);
+        this.contentText = this.getContent(this.contentText);
+        this.isDom = this.isElement(this.contentText);
         if(this.isDom){
-            this.content = this.content.cloneNode(true);
-            this.content.style.display = 'block';
+            this.contentText = this.contentText.cloneNode(true);
+            this.contentText.style.display = 'block';
         }
         this.$nextTick(()=>{
             this.openAnim();
@@ -94,7 +94,7 @@ export default {
         },
         insertDom(){
             var dom = document.getElementById('vi-layer-'+this.uId);
-            dom.appendChild(this.content);
+            dom.appendChild(this.contentText);
         }
     },
 }
