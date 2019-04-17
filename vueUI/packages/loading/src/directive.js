@@ -9,7 +9,6 @@ loadingDirective.install = Vue => {
     Vue.directive('loading',{
         //初次绑定指令的时候调用
         bind:function(el,binding,vnode){
-            console.log(el);
             const text = el.getAttribute('vi-loading-text');
             const vm = vnode.context; //绑定节点的vm
             const loading = new Mask({
@@ -28,7 +27,7 @@ loadingDirective.install = Vue => {
         },
         update:function(el,binding){
             //指令值更新时候调用
-            console.log(binding);
+            el.instance.text = el.getAttribute('vi-loading-text');
             toggleLoading(el,binding);
         },
         unbind:function(el,binding){

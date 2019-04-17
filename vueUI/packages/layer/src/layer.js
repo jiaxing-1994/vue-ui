@@ -21,9 +21,10 @@ const layer = (options) =>{
     layerInstance.vm = layerInstance;
     layerInstance.dom = layerInstance.$el;
     document.body.appendChild(layerInstance.dom);
+    layerInstance.domInsert = true;
+    console.log(layerInstance.vm);
     uId++;
     middlePosition(document.body,layerInstance.dom.childNodes[0]);
-    layerInstance.domInsert = true;
     layerInstance.vm.$on('closeLayer',()=>{
         removeDom(layerInstance.vm,document.body,layerInstance.dom);
         uId--;

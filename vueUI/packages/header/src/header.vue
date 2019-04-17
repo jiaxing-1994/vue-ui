@@ -70,7 +70,7 @@ export default {
         },
         bottomLine:{
             type:String,
-            default:'',
+            default:'#ddd',
         },
     },
     data(){

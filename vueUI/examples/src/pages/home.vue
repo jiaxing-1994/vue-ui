@@ -29,6 +29,9 @@ export default {
         },{
             text:'头部组件',
             path:'/header'
+        },{
+            text:'tabs',
+            path:'/tabs'
         }]
         }
     },

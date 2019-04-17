@@ -1,9 +1,11 @@
 import Loading from '../packages/loading';
 import Layer from '../packages/layer'
 import Header from '../packages/header'
+import Tabs from '../packages/tabs'
 console.log(Header)
 const components = [
-    Header
+    Header,
+    Tabs
 ]
 const install = (Vue)=>{
     Vue.use(Loading.LoadingDirective);
@@ -18,4 +20,5 @@ export default {
     install,
     Loading,
     Header,
+    Tabs
 };
