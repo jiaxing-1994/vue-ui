@@ -4,6 +4,7 @@ import Home from '@/pages/home'
 import Header from '@/components/Header'
 import Layer from '@/components/Layer'
 import Loading from '@/components/Loading'
+import Toast from '@/components/Toast'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path:'/loading',
       name:'Loading',
       component:Loading
+    },
+    {
+      path:'/toast',
+      name:'Toast',
+      component:Toast
     }
   ]
 })

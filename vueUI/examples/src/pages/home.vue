@@ -22,7 +22,7 @@ export default {
             path:'/loading'
         },{
             text:'toast',
-            path:''
+            path:'/toast'
         },{
             text:'alert',
             path:''
